@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing programs..."
-sudo pacman -S hyprland hyprpaper waybar firefox neovim krita blender alacritty mc btop cmake smplayer cmus wofi evince transmission-gtk numlockx udiskie pamixer grim slurp zip unzip
+sudo pacman -S hyprland hyprpaper waybar firefox neovim alacritty mc btop cmake smplayer cmus wofi evince numlockx udiskie pamixer grim slurp zip unzip
 
 echo "Installing fonts..."
 sudo pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera ttf-arphic-ukai ttf-arphic-uming ttf-hanazono ttf-jetbrains-mono-nerd
@@ -9,3 +9,16 @@ sudo pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera tt
 echo "Copying settings..."
 cp -r .config ~/
 cp -r .bashrc ~/
+
+echo "Install Yaourt..."
+sudo pacman -S --needed base-devel git wget yajl
+cd /tmp
+git clone https://aur.archlinux.org/package-query.git
+cd package-query/
+makepkg -si
+cd ..
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt/
+makepkg -si
+cd ..
+sudo rm -dR yaourt/ package-query/
