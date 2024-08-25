@@ -10,8 +10,8 @@ endif
 call plug#begin('~/.vim/bundle')
 "-----------------------------------------------------------------
 Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -40,7 +40,7 @@ set cursorline "А так мы можем подсвечивать строку 
 set wrap linebreak nolist "Данная вариация работает как wrap...
 set textwidth=80 "Где 80 стоит заменить на нужную вам длину строки
 
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 nmap <F6> :NERDTreeToggle<CR>
 nmap <F7> :PlugUpdate<CR>
 
@@ -69,9 +69,9 @@ function! WinMove(key)
 endfunction
 
 "Не в список плагинов
-let c_syntax_for_h=""
-let g:airline_powerline_fonts = 1 "Включить поддержку Powerline шрифтов
-let g:airline#extensions#keymap#enabled = 0 "Не показывать текущий маппинг
-let g:airline_section_z = "\ue0a1:%l/%L Col:%c" "Кастомная графа положения курсора
-let g:Powerline_symbols='unicode' "Поддержка unicode
-let g:airline#extensions#xkblayout#enabled = 0 "Про это позже расскажу
+"let c_syntax_for_h=""
+"let g:airline_powerline_fonts = 1 "Включить поддержку Powerline шрифтов
+"let g:airline#extensions#keymap#enabled = 0 "Не показывать текущий маппинг
+"let g:airline_section_z = "\ue0a1:%l/%L Col:%c" "Кастомная графа положения курсора
+"let g:Powerline_symbols='unicode' "Поддержка unicode
+"let g:airline#extensions#xkblayout#enabled = 0 "Про это позже расскажу
